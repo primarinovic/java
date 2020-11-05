@@ -8,7 +8,7 @@ public class TesteFatorial {
 						
 			fatorial *= i;
 			
-			System.out.println(fatorial);
+			System.out.println("Fatorial de " + i + " = " + fatorial);
 			
 		}
 
