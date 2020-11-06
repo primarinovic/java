@@ -17,6 +17,10 @@ public class TestaMetodo {
 		
 		System.out.println(contaDoBilbo.saldo);
 		
+		contaDoBilbo.titular = "Bilbo Baggins";
+		
+		System.out.println(contaDoBilbo.titular);
+		
 
 	}
 
