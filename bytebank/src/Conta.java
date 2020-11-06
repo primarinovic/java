@@ -29,12 +29,25 @@ public class Conta {
 						
 	}
 	
-	public void transfere(double valor) {
-		this.saldo -= valor;
+	public boolean transfere(double valor, Conta destino) {
 		
-		System.out.println("Valor transferido: " + valor); 
-		System.out.println("Saldo atualizado: " + this.saldo);
-		System.out.println();
+		if (this.saldo >= valor) {
+			this.saldo -= valor;
+			//destino.deposita(valor); <= por causa do deposita(), 
+			//o saldo da conta destino fica exposto
+			destino.saldo += valor;
+			System.out.println("Valor transferido: " + valor); 
+			System.out.println("Saldo atualizado: " + this.saldo);
+			System.out.println();
+			return true;
+		} else {
+			System.out.println("Saldo insuficiente");
+			System.out.println("Seu saldo: " + this.saldo);
+			System.out.println();
+			return false;		
+		
 	}
+	
+}
 	
 }

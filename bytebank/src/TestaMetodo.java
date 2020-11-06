@@ -10,6 +10,13 @@ public class TestaMetodo {
 		
 		contaDoBilbo.saca(200);
 		
+		Conta contaDaCake = new Conta();
+		contaDaCake.deposita(1000);
+		
+		contaDaCake.transfere(300, contaDoBilbo);
+		
+		System.out.println(contaDoBilbo.saldo);
+		
 
 	}
 
