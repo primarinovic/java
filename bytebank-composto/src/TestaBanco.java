@@ -8,7 +8,7 @@ public class TestaBanco {
 		bilbo.profissao = "fedozinho do apartamento";
 		
 		Conta contaDoBilbo = new Conta();
-		contaDoBilbo.saldo = 100;
+		contaDoBilbo.deposita(100);
 		
 		contaDoBilbo.titular = bilbo;
 		
