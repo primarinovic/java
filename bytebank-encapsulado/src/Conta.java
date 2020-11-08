@@ -1,8 +1,17 @@
 public class Conta {
 	private double saldo;
-	private int agencia = 42;
+	private int agencia;
 	private int numero;
 	private Cliente titular;
+	private static int total;
+	
+	public Conta (int agencia, int numero) {
+		total++;
+		//System.out.println("O total de contas é " + total);
+		this.agencia = agencia;
+		this.numero = numero;
+		//System.out.println("Estou criando a conta número: " + this.numero);
+	}
 
 	public void deposita(double valor) {
 		this.saldo += valor;
@@ -56,6 +65,10 @@ public class Conta {
 	}
 	
 	public void setNumero(int numero) {
+		if (numero <= 0) {
+			System.out.println("valores negativos não podem ser utilizados");
+			return;
+		}
 		this.numero = numero;
 	}
 	
@@ -64,6 +77,10 @@ public class Conta {
 	}
 	
 	public void setAgencia(int agencia) {
+		if (agencia <= 0) {
+			System.out.println("valores negativos não podem ser utilizados");
+			return;
+		}
 		this.agencia = agencia;
 	}
 	
@@ -73,5 +90,9 @@ public class Conta {
 	
 	public Cliente getTitular() {
 		return titular;
+	}
+	
+	public static int getTotal() {
+		return Conta.total;
 	}
 }
