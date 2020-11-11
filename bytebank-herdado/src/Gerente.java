@@ -1,8 +1,8 @@
-
+// classe filha / Gerente é um Funcionario / Gerente herda de Funcionario 
 public class Gerente extends Funcionario {
 
 	private int senha;
-	
+
 	public void setSenha(int senha) {
 		this.senha = senha;
 	}
@@ -15,9 +15,8 @@ public class Gerente extends Funcionario {
 		}
 	}
 
-/*	public double getBonificacao() {
-		return this.salario;
-	}*/
+	public double getBonificacao() {
+		return super.salario; // super - o atributo vem da classe mãe
+	}
 
-	
 }

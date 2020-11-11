@@ -1,9 +1,9 @@
-
+// super class / classe mãe / base class
 public class Funcionario {
 		
 		private String nome;
 		private String cpf;
-		private double salario;
+		protected double salario; // protected - publico só para os filhos 
 		
 	
 		public double getBonificacao( ) {
