@@ -1,4 +1,4 @@
-// classe filha / Gerente é um Funcionario / Gerente herda de Funcionario 
+// classe filha/sub class / Gerente é um Funcionario / Gerente herda de Funcionario 
 public class Gerente extends Funcionario {
 
 	private int senha;
