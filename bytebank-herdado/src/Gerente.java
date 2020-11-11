@@ -16,7 +16,7 @@ public class Gerente extends Funcionario {
 	}
 
 	public double getBonificacao() {
-		return super.salario; // super - o atributo vem da classe mãe
+		return super.getBonificacao() + super.getSalario(); // super - vem da classe mãe
 	}
 
 }
