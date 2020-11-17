@@ -1,5 +1,5 @@
-public class Conta {
-	private double saldo;
+public abstract class Conta {
+	protected double saldo;
 	private int agencia;
 	private int numero;
 	private Cliente titular;
@@ -13,26 +13,29 @@ public class Conta {
 		//System.out.println("Estou criando a conta número: " + this.numero);
 	}
 
-	public void deposita(double valor) {
+	public abstract void deposita(double valor); /*{
 		this.saldo += valor;
 
-		System.out.println("Valor depositado: " + valor);
-		System.out.println("Saldo atualizado: " + this.saldo);
-		System.out.println();
-	}
+		/*
+		 * System.out.println("Valor depositado: " + valor);
+		 * System.out.println("Saldo atualizado: " + this.saldo); System.out.println();
+		 
+	}*/
 
 	public boolean saca(double valor) {
 
 		if (this.saldo >= valor) {
 			this.saldo -= valor;
-			System.out.println("Valor sacado: " + valor);
-			System.out.println("Saldo atualizado: " + this.saldo);
-			System.out.println();
+			/*
+			 * System.out.println("Valor sacado: " + valor);
+			 * System.out.println("Saldo atualizado: " + this.saldo); System.out.println();
+			 */
 			return true;
 		} else {
-			System.out.println("Saldo insuficiente");
-			System.out.println("Seu saldo: " + this.saldo);
-			System.out.println();
+			/*
+			 * System.out.println("Saldo insuficiente"); System.out.println("Seu saldo: " +
+			 * this.saldo); System.out.println();
+			 */
 			return false;
 		}
 	}
@@ -44,14 +47,16 @@ public class Conta {
 			// destino.deposita(valor); <= por causa do deposita(),
 			// o saldo da conta destino fica exposto
 			destino.saldo += valor;
-			System.out.println("Valor transferido: " + valor);
-			System.out.println("Saldo atualizado: " + this.saldo);
-			System.out.println();
+			/*
+			 * System.out.println("Valor transferido: " + valor);
+			 * System.out.println("Saldo atualizado: " + this.saldo); System.out.println();
+			 */
 			return true;
 		} else {
-			System.out.println("Saldo insuficiente");
-			System.out.println("Seu saldo: " + this.saldo);
-			System.out.println();
+			/*
+			 * System.out.println("Saldo insuficiente"); System.out.println("Seu saldo: " +
+			 * this.saldo); System.out.println();
+			 */
 			return false;
 		}
 	}

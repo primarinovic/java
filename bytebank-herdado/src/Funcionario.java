@@ -1,5 +1,5 @@
-// super class / classe mãe / base class
-public class Funcionario {
+// classe abstrata não pode ser instanciada
+public abstract class Funcionario {
 		
 		private String nome;
 		private String cpf;
@@ -8,10 +8,8 @@ public class Funcionario {
 		// private - privado para todos
 		
 	
-		public double getBonificacao( ) {
-			return this.salario * 0.05;
-		}
-		
+		// metodo sem corpo, não há implementação, os filhos que farão a implementação
+		public abstract double getBonificacao( );
 		
 		public String getNome() {
 			return nome;
