@@ -1,23 +1,28 @@
-// classe filha/sub class / Gerente é um Funcionario / Gerente herda de Funcionario 
-public class Gerente extends Funcionario {
+//classe filha/sub class/Gerente é um Funcionario/Gerente herda de Funcionario
+//e "assina" o contrato Autenticavel
+
+public class Gerente extends Funcionario implements Autenticavel {
 
 	private int senha;
 
-	public void setSenha(int senha) {
-		this.senha = senha;
+	public double getBonificacao() {
+		System.out.println("Chamando metodo de bonificacao do GERENTE");
+		return super.getSalario();
 	}
 
+	@Override
+	public void setSenha(int senha) {
+		this.senha = senha;
+
+	}
+
+	@Override
 	public boolean autentica(int senha) {
 		if (this.senha == senha) {
 			return true;
 		} else {
 			return false;
 		}
-	}
-
-	public double getBonificacao() {
-		System.out.println("Chamando metodo de bonificacao do GERENTE");
-		return getSalario(); 
 	}
 
 }
