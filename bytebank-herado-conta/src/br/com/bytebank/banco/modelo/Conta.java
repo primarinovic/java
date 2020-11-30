@@ -1,11 +1,24 @@
 package br.com.bytebank.banco.modelo;
 
+/**
+ * Classe-mãe das contas
+ * 
+ * @author Pri
+ *
+ */
+
 public abstract class Conta {
 	protected double saldo;
 	private int agencia;
 	private int numero;
 	private Cliente titular;
 	private static int total;
+	
+	/**
+	 * Construtor para inicializar o objeto Conta a partir da agência e número
+	 * @param agencia
+	 * @param numero
+	 */
 	
 	public Conta (int agencia, int numero) {
 		total++;
@@ -23,6 +36,13 @@ public abstract class Conta {
 		 * System.out.println("Saldo atualizado: " + this.saldo); System.out.println();
 		 
 	}*/
+	
+	/**
+	 * Valor precisa ser maior do que o saldo
+	 * 
+	 * @param valor
+	 * @throws SaldoInsuficienteException
+	 */
 
 	public void saca(double valor) throws SaldoInsuficienteException {
 
